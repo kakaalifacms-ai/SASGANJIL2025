@@ -24,19 +24,18 @@ const btnHitungBelanja = document.getElementById("hitung");
 const btnResetBelanja = document.getElementById("reset");
 
 if (btnHitungBelanja) {
-    btnHitungBelanja.onclick = function () {
-        let h = parseFloat(harga.value) || 0;
-        let j = parseFloat(jumlah.value) || 0;
-        let d = parseFloat(diskon.value) || 0;
-
+    btnHitungBelanja.onclick = function() {
+        let h = parseFloat(harga?.value) || 0;
+        let j = parseFloat(jumlah?.value) || 0;
+        let d = parseFloat(diskon?.value) || 0;
+        
         let subtotal = h * j;
         let potDiskon = subtotal * (d / 100);
         let layanan = subtotal * 0.02;
         let ongkir = 10000;
         let aplikasi = 2000;
-
         let total = subtotal - potDiskon + layanan + ongkir + aplikasi;
-
+        
         outSubtotal.textContent = formatRupiah(subtotal);
         outDiskon.textContent = formatRupiah(potDiskon);
         outLayanan.textContent = formatRupiah(layanan);
@@ -47,11 +46,11 @@ if (btnHitungBelanja) {
 }
 
 if (btnResetBelanja) {
-    btnResetBelanja.onclick = function () {
+    btnResetBelanja.onclick = function() {
         harga.value = "";
         jumlah.value = "";
         diskon.value = "";
-
+        
         outSubtotal.textContent = "Rp 0";
         outDiskon.textContent = "Rp 0";
         outLayanan.textContent = "Rp 0";
@@ -64,86 +63,91 @@ if (btnResetBelanja) {
 /* ===============================
    KALKULATOR BMI (INDEX3)
 ================================*/
-function hitungBMI() {
-    let tinggi = parseFloat(document.getElementById("tinggi").value);
-    let berat = parseFloat(document.getElementById("berat").value);
+const hitungBMIbtn = document.getElementById("hitungBMI");
+const resetBMIbtn = document.getElementById("resetBMI");
 
-    if (!tinggi || !berat) {
-        document.getElementById("hasilBMI").innerHTML = "Mohon isi semua data!";
-        return;
-    }
-
-    let t = tinggi / 100;
-    let bmi = berat / (t * t);
-    let kategori = "";
-
-    if (bmi < 18.5) kategori = "Kurus";
-    else if (bmi < 25) kategori = "Normal";
-    else if (bmi < 30) kategori = "Kelebihan berat badan";
-    else kategori = "Obesitas";
-
-    document.getElementById("hasilBMI").innerHTML =
-        `BMI: ${bmi.toFixed(1)} (${kategori})`;
+if (hitungBMIbtn) {
+    hitungBMIbtn.onclick = function() {
+        let gender = document.getElementById("gender").value;
+        let tinggi = parseFloat(document.getElementById("tinggi").value);
+        let berat = parseFloat(document.getElementById("berat").value);
+        let hasil = document.getElementById("hasilBMI");
+        
+        if (!gender || !tinggi || !berat) {
+            hasil.innerHTML = "Mohon isi semua data!";
+            return;
+        }
+        
+        let t = tinggi / 100;
+        let bmi = berat / (t * t);
+        let kategori = "";
+        
+        if (bmi < 18.5)
+            kategori = gender === "L" ? "Kurus - Perlu menambah berat badan" :
+            "Kurus - Perlu menjaga pola makan";
+        else if (bmi < 24.9)
+            kategori = "Normal - Berat badan ideal";
+        else if (bmi < 29.9)
+            kategori = "Kelebihan Berat Badan - Perlu Olahraga!";
+        else
+            kategori = "Obesitas - Perlu konsultasi ke Dokter";
+        
+        hasil.innerHTML = `<b>BMI: ${bmi.toFixed(1)}</b><br>${kategori}`;
+    };
 }
 
-function resetBMI() {
-    document.getElementById("tinggi").value = "";
-    document.getElementById("berat").value = "";
-    document.getElementById("hasilBMI").innerHTML = "Hasil BMI akan tampil di sini...";
+if (resetBMIbtn) {
+    resetBMIbtn.onclick = function() {
+        document.getElementById("gender").value = "";
+        document.getElementById("tinggi").value = "";
+        document.getElementById("berat").value = "";
+        document.getElementById("hasilBMI").innerHTML = "Hasil BMI akan tampil di sini...";
+    };
 }
-
-/* Event BMI */
-const btnHitungBMI = document.getElementById("hitungBMI");
-const btnResetBMI = document.getElementById("resetBMI");
-
-if (btnHitungBMI) btnHitungBMI.onclick = hitungBMI;
-if (btnResetBMI) btnResetBMI.onclick = resetBMI;
 
 /* ===============================
    KALKULATOR ZAKAT (INDEX4)
 ================================*/
-function hitungZakat() {
-    let gaji = parseFloat(document.getElementById("gaji").value);
-    let pokok = parseFloat(document.getElementById("pokok").value);
+const hitungZakatBtn = document.getElementById("hitungZakat");
+const resetZakatBtn = document.getElementById("resetZakat");
 
-    if (!gaji || !pokok) {
-        document.getElementById("hasilZakat").innerHTML = "Mohon isi semua data!";
-        return;
-    }
-
-    let bersih = gaji - pokok;
-    let nisab = 85 * 84000;
-    let wajib = bersih >= nisab;
-    let zakat = Math.round(bersih * 0.025);
-
-    let teks = `
-        <b>📊 HASIL PERHITUNGAN ZAKAT</b><br><br>
-        Penghasilan bulanan: ${formatRupiah(gaji)}<br>
-        Pengeluaran pokok: ${formatRupiah(pokok)}<br>
-        Penghasilan bersih: ${formatRupiah(bersih)}<br><br>
-        Nisab: ${formatRupiah(nisab)}<br><br>
-    `;
-
-    if (wajib) {
-        teks += `<b>☑ ANDA WAJIB ZAKAT</b><br>
-                 Zakat yang harus dibayar: <b>${formatRupiah(zakat)} per bulan</b>`;
-    } else {
-        teks += `<b>☒ ANDA TIDAK WAJIB ZAKAT</b><br>
-                 Penghasilan belum mencapai nisab.`;
-    }
-
-    document.getElementById("hasilZakat").innerHTML = teks;
+if (hitungZakatBtn) {
+    hitungZakatBtn.onclick = function() {
+        let gaji = parseFloat(document.getElementById("gaji").value);
+        let pokok = parseFloat(document.getElementById("pokok").value);
+        let hasil = document.getElementById("hasilZakat");
+        
+        if (!gaji || !pokok) {
+            hasil.innerHTML = "Mohon isi semua data!";
+            return;
+        }
+        
+        let bersih = gaji - pokok;
+        let nisab = 85 * 84000;
+        let wajib = bersih >= nisab;
+        let zakat = Math.round(bersih * 0.025);
+        
+        let teks = `
+            <b>📊 HASIL PERHITUNGAN ZAKAT</b><br><br>
+            Penghasilan bulanan: ${formatRupiah(gaji)}<br>
+            Pengeluaran pokok: ${formatRupiah(pokok)}<br>
+            Penghasilan bersih: ${formatRupiah(bersih)}<br><br>
+            Nisab: ${formatRupiah(nisab)}<br><br>
+        `;
+        
+        teks += wajib ?
+            `<b>☑ ANDA WAJIB ZAKAT</b><br>Zakat per bulan: <b>${formatRupiah(zakat)}</b>` :
+            `<b>☒ ANDA TIDAK WAJIB ZAKAT</b><br>Penghasilan belum mencapai nisab.`;
+        
+        hasil.innerHTML = teks;
+    };
 }
 
-function resetZakat() {
-    document.getElementById("gaji").value = "";
-    document.getElementById("pokok").value = "";
-    document.getElementById("hasilZakat").innerHTML = "Hasil perhitungan akan tampil di sini...";
+if (resetZakatBtn) {
+    resetZakatBtn.onclick = function() {
+        document.getElementById("gaji").value = "";
+        document.getElementById("pokok").value = "";
+        document.getElementById("hasilZakat").innerHTML =
+            "Hasil perhitungan akan tampil di sini…";
+    };
 }
-
-/* Event Zakat */
-const btnHitungZakat = document.getElementById("hitungZakat");
-const btnResetZakat = document.getElementById("resetZakat");
-
-if (btnHitungZakat) btnHitungZakat.onclick = hitungZakat;
-if (btnResetZakat) btnResetZakat.onclick = resetZakat;

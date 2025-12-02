@@ -11,22 +11,29 @@
 <h2 class="judul-center">Kalkulator BMI</h2>
 
 <div class="card">
-    
+
+    <label>Jenis Kelamin</label>
+    <select id="gender">
+        <option value="">-- Pilih --</option>
+        <option value="L">Laki-laki</option>
+        <option value="P">Perempuan</option>
+    </select>
+
     <label>Tinggi (cm)</label>
     <input type="number" id="tinggi">
-    
+
     <label>Berat (kg)</label>
     <input type="number" id="berat">
-    
+
     <div class="btn-dua">
         <button id="hitungBMI" class="btn-hitung">Hitung BMI</button>
         <button id="resetBMI" class="btn-reset">Reset</button>
     </div>
-    
-    <div id="hasilBMI" class="hasil">
+
+    <div class="hasil" id="hasilBMI">
         Hasil BMI akan tampil di sini…
     </div>
-    
+
 </div>
 
 <!-- Tombol di luar card -->
