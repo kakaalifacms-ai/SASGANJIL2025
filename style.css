@@ -1,0 +1,137 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f2f2f2;
+    padding: 20px;
+}
+
+.judul, .judul-center {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* CARD STYLE */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0002;
+}
+
+/* INPUT AREA */
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+}
+
+/* BUTTONS */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+button:hover {
+    opacity: .9;
+}
+
+.btn-group, .btn-dua {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-group button, .btn-dua button {
+    flex: 1;
+}
+
+/* IMAGE */
+.gambar, .foto-barang {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.img-center {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.foto-barang {
+    width: 140px;
+}
+
+/* TEXT UNDER IMAGE */
+.nama-center {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* HASIL BOX */
+.hasil-box, .hasil {
+    margin-top: 20px;
+    padding: 15px;
+    background: #eef;
+    border-radius: 6px;
+}
+/* ============================
+   TOMBOL KHUSUS PER HALAMAN
+============================ */
+
+/* INDEX2 — tombol hijau */
+.btn-hijau {
+    background: #28a745 !important; /* hijau */
+    color: white !important;
+}
+
+/* INDEX3 — tombol kuning */
+.btn-kuning {
+    background: #ffc107 !important; /* kuning */
+    color: black !important;
+}
+/* Semua tombol reset warna merah */
+.btn-reset {
+    background: #dc3545 !important; /* merah */
+    color: white !important;
+    border: none !important;
+}
+
+.btn-reset:hover {
+    opacity: 0.9;
+}
+
+/* Tombol Menu Utama (warna khusus) */
+.btn-menu {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #FF8C00; /* warna bebas, ini ungu */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.btn-menu:hover {
+    opacity: 0.9;
+}

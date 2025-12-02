@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator BMI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2 class="judul">Kalkulator BMI</h2>
+
+<div class="card">
+
+    <label>Tinggi (cm)</label>
+    <input type="number" id="tinggi">
+
+    <label>Berat (kg)</label>
+    <input type="number" id="berat">
+
+    <div class="btn-dua">
+        <button onclick="hitungBMI()">Hitung BMI</button>
+  <button onclick="resetBMI()" class="btn-reset">Reset</button>
+    </div>
+
+    <div class="hasil-box">
+        <p id="hasilBMI">Hasil BMI akan tampil di sini...</p>
+    </div>
+
+<div class="btn-dua">
+    <button class="btn-kuning" onclick="location.href='index2.html'">⬅ Belanja</button>
+    <button class="btn-kuning" onclick="location.href='index4.html'">➡ Zakat</button>
+</div>
+
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

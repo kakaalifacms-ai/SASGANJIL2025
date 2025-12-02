@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Total Belanja</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2 class="judul-center">Kalkulator Total Belanja</h2>
+
+<div class="img-center">
+    <img src="kemeja.jpg" alt="Kemeja" class="foto-barang">
+</div>
+
+<h3 class="nama-center">Kemeja Perempuan</h3>
+
+<div class="kontainer">
+
+    <div class="kiri">
+        <label>Harga Barang (Rp)</label>
+        <input type="number" id="harga">
+
+        <label>Jumlah Pesanan</label>
+        <input type="number" id="jumlah">
+
+        <label>Diskon (%)</label>
+        <input type="number" id="diskon">
+    </div>
+
+    <div class="kanan">
+
+        <div class="btn-dua">
+            <button id="hitung">Hitung Total</button>
+          <button id="reset" class="btn-reset">Reset</button>
+        </div>
+
+        <div class="hasil">
+            <p>Subtotal: <span id="outSubtotal">Rp 0</span></p>
+            <p>Diskon ( % ): <span id="outDiskon">Rp 0</span></p>
+            <p>Biaya Layanan (2%): <span id="outLayanan">Rp 0</span></p>
+            <p>Biaya Ongkir: <span id="outOngkir">Rp 0</span></p>
+            <p>Biaya Aplikasi: <span id="outAplikasi">Rp 0</span></p>
+
+            <h3>Total Bayar: <span id="outTotal">Rp 0</span></h3>
+        </div>
+
+    </div>
+
+</div>
+
+<hr style="margin-top:30px;">
+
+<h3 class="judul-center">Lanjut Ke Program Lain</h3>
+
+<div class="menu-center">
+    <button class="btn-hijau" onclick="location.href='index3.html'">➡ Kalkulator BMI</button>
+    <button class="btn-hijau" onclick="location.href='index4.html'">➡ Kalkulator Zakat Penghasilan</button>
+    <button onclick="location.href='index.html'">⬅ Kembali ke Menu</button>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

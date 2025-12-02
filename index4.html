@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Zakat Penghasilan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2 class="judul">Kalkulator Zakat Penghasilan</h2>
+
+<div class="card">
+
+    <label>Penghasilan (Rp)</label>
+    <input type="number" id="gaji">
+
+    <label>Pengeluaran Pokok (Rp)</label>
+    <input type="number" id="pokok">
+
+    <div class="btn-dua">
+        <button onclick="hitungZakat()">Hitung Zakat</button>
+   <button onclick="resetZakat()" class="btn-reset">Reset</button>
+    </div>
+
+    <div class="hasil-box">
+        <p id="hasilZakat">Hasil perhitungan akan tampil di sini...</p>
+    </div>
+
+<div class="btn-dua">
+    <button onclick="location.href='index3.html'">⬅ BMI</button>
+</div>
+
+<button onclick="location.href='index.html'" class="btn-menu">Menu Utama</button>
+
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
