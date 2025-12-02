@@ -8,33 +8,32 @@
 </head>
 <body>
 
-<h2 class="judul">Kalkulator Zakat Penghasilan</h2>
+<h2 class="judul-center">Kalkulator Zakat Penghasilan</h2>
 
 <div class="card">
 
     <label>Penghasilan (Rp)</label>
-    <input type="number" id="gaji">
+    <input type="number" id="penghasilan">
 
     <label>Pengeluaran Pokok (Rp)</label>
-    <input type="number" id="pokok">
+    <input type="number" id="pengeluaran">
 
     <div class="btn-dua">
-        <button onclick="hitungZakat()">Hitung Zakat</button>
-   <button onclick="resetZakat()" class="btn-reset">Reset</button>
+        <button class="btn-hitung">Hitung Zakat</button>
+        <button class="btn-reset">Reset</button>
     </div>
 
-    <div class="hasil-box">
-        <p id="hasilZakat">Hasil perhitungan akan tampil di sini...</p>
+    <div class="hasil">
+        Hasil perhitungan akan tampil di sini…
     </div>
-
-<div class="btn-dua">
-    <button onclick="location.href='index3.html'">⬅ BMI</button>
-</div>
-
-<button onclick="location.href='index.html'" class="btn-menu">Menu Utama</button>
 
 </div>
 
+<!-- Tombol di luar card -->
+<div class="menu-center">
+    <button class="btn-hijau" onclick="location.href='index3.html'">← BMI</button>
+    <button class="btn-menu" onclick="location.href='index.html'">Menu Utama</button>
+</div>
 <script src="main.js"></script>
 </body>
 </html>
