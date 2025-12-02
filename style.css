@@ -185,3 +185,69 @@ button,
 .btn-bmi-menu:hover {
     opacity: 0.9;
 }
+
+/*-----------------------------*/
+
+/* MODE DESKTOP (layar lebar) */
+@media (min-width: 768px) {
+    body {
+        background: #ddd; /* warna beda dari mobile */
+    }
+
+    .card {
+        width: 600px;
+        margin: auto;
+        box-shadow: 0 0 20px #0003;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 14px;
+    }
+}
+
+
+/* ===============================
+   MODE DESKTOP KHUSUS INDEX2
+   =============================== */
+
+@media (min-width: 768px) {
+
+    /* Layout 2 kolom */
+    .kontainer {
+        display: flex;
+        gap: 20px;
+        max-width: 900px;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    .kiri, .kanan {
+        flex: 1;
+    }
+
+    /* Card lebih rapi */
+    .kiri, .kanan {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #0002;
+    }
+
+    /* Tombol lebih besar */
+    button {
+        font-size: 18px;
+        padding: 14px;
+    }
+
+    /* Foto barang lebih besar di desktop */
+    .foto-barang {
+        width: 200px;
+    }
+
+    /* Menu tombol bawah rata tengah */
+    .menu-center {
+        max-width: 500px;
+        margin: auto;
+    }
+}
