@@ -7,7 +7,7 @@ function formatRupiah(angka) {
 }
 
 /* ===============================
-   KALKULATOR TOTAL BELANJA
+   KALKULATOR TOTAL BELANJA (INDEX2)
 ================================*/
 const harga = document.getElementById("harga");
 const jumlah = document.getElementById("jumlah");
@@ -20,11 +20,11 @@ const outOngkir = document.getElementById("outOngkir");
 const outAplikasi = document.getElementById("outAplikasi");
 const outTotal = document.getElementById("outTotal");
 
-const btnHitung = document.getElementById("hitung");
-const btnReset = document.getElementById("reset");
+const btnHitungBelanja = document.getElementById("hitung");
+const btnResetBelanja = document.getElementById("reset");
 
-if (btnHitung) {
-    btnHitung.onclick = function () {
+if (btnHitungBelanja) {
+    btnHitungBelanja.onclick = function () {
         let h = parseFloat(harga.value) || 0;
         let j = parseFloat(jumlah.value) || 0;
         let d = parseFloat(diskon.value) || 0;
@@ -46,8 +46,8 @@ if (btnHitung) {
     };
 }
 
-if (btnReset) {
-    btnReset.onclick = function () {
+if (btnResetBelanja) {
+    btnResetBelanja.onclick = function () {
         harga.value = "";
         jumlah.value = "";
         diskon.value = "";
@@ -62,7 +62,7 @@ if (btnReset) {
 }
 
 /* ===============================
-   KALKULATOR BMI
+   KALKULATOR BMI (INDEX3)
 ================================*/
 function hitungBMI() {
     let tinggi = parseFloat(document.getElementById("tinggi").value);
@@ -92,8 +92,15 @@ function resetBMI() {
     document.getElementById("hasilBMI").innerHTML = "Hasil BMI akan tampil di sini...";
 }
 
+/* Event BMI */
+const btnHitungBMI = document.getElementById("hitungBMI");
+const btnResetBMI = document.getElementById("resetBMI");
+
+if (btnHitungBMI) btnHitungBMI.onclick = hitungBMI;
+if (btnResetBMI) btnResetBMI.onclick = resetBMI;
+
 /* ===============================
-   KALKULATOR ZAKAT PENGHASILAN
+   KALKULATOR ZAKAT (INDEX4)
 ================================*/
 function hitungZakat() {
     let gaji = parseFloat(document.getElementById("gaji").value);
@@ -105,7 +112,7 @@ function hitungZakat() {
     }
 
     let bersih = gaji - pokok;
-    let nisab = 85 * 84000; // Contoh: harga emas Rp 84.000 per gram
+    let nisab = 85 * 84000;
     let wajib = bersih >= nisab;
     let zakat = Math.round(bersih * 0.025);
 
@@ -133,3 +140,10 @@ function resetZakat() {
     document.getElementById("pokok").value = "";
     document.getElementById("hasilZakat").innerHTML = "Hasil perhitungan akan tampil di sini...";
 }
+
+/* Event Zakat */
+const btnHitungZakat = document.getElementById("hitungZakat");
+const btnResetZakat = document.getElementById("resetZakat");
+
+if (btnHitungZakat) btnHitungZakat.onclick = hitungZakat;
+if (btnResetZakat) btnResetZakat.onclick = resetZakat;
