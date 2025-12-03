@@ -10,54 +10,38 @@
 
 <h2 class="judul-center">Kalkulator Total Belanja</h2>
 
-<div class="img-center">
-    <img src="SEPATUU.jpg" alt="Sepatu" class="foto-barang">
-</div>
+<div class="card">
 
-<h3 class="nama-center">SEPATU OLAHRAGA</h3>
-
-<div class="kontainer">
-
-    <div class="kiri">
-        <label>Harga Barang (Rp)</label>
-        <input type="number" id="harga" value="140000">
-
-        <label>Jumlah Pesanan</label>
-        <input type="number" id="jumlah" placeholder="Berapa Jumlah nya">
-
-        <label>Diskon (%)</label>
-        <input type="number" id="diskon" value="25">
+    <div class="img-center">
+        <img src="SEPATUU.jpg" class="foto-barang">
     </div>
 
-    <div class="kanan">
+    <h3 class="nama-center">SEPATU OLAHRAGA</h3>
 
-        <div class="btn-dua">
-            <button id="hitung">Hitung Total</button>
-          <button id="reset" class="btn-reset">Reset</button>
-        </div>
+    <label>Harga Barang (Rp)</label>
+    <input type="number" id="harga">
 
-        <div class="hasil">
-            <p>Subtotal: <span id="outSubtotal">Rp 0</span></p>
-            <p>Diskon ( % ): <span id="outDiskon">Rp 0</span></p>
-            <p>Biaya Layanan (2%): <span id="outLayanan">Rp 0</span></p>
-            <p>Biaya Ongkir: <span id="outOngkir">Rp 0</span></p>
-            <p>Biaya Aplikasi: <span id="outAplikasi">Rp 0</span></p>
+    <label>Jumlah Pesanan</label>
+    <input type="number" id="jumlah" placeholder="Berapa Jumlah nya">
 
-            <h3>Total Bayar: <span id="outTotal">Rp 0</span></h3>
-        </div>
+    <label>Diskon (%)</label>
+    <input type="number" id="diskon">
 
+    <div class="btn-dua">
+        <button id="hitung" class="btn-hitung">Hitung Total</button>
+        <button id="reset" class="btn-reset">Reset</button>
+    </div>
+
+    <!-- ===== HASIL BARU ===== -->
+    <div class="hasil" id="hasilBelanja">
+        Hasil perhitungan akan muncul di sini...
     </div>
 
 </div>
-
-<hr style="margin-top:30px;">
-
-<h3 class="judul-center">Lanjut Ke Program Lain</h3>
 
 <div class="menu-center">
-    <button class="btn-hijau" onclick="location.href='index3.html'">➡ Kalkulator BMI</button>
-    <button class="btn-hijau" onclick="location.href='index4.html'">➡ Kalkulator Zakat Penghasilan</button>
-    <button onclick="location.href='index.html'">🔙Kembali ke Menu</button>
+    <button class="btn-bmi-menu" onclick="location.href='index3.html'">Kalkulator BMI→</button>
+    <button class="btn-menu" onclick="location.href='index.html'">Menu Utama</button>
 </div>
 
 <script src="main.js"></script>

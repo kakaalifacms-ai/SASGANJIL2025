@@ -99,10 +99,11 @@ button:hover {
 .hasil-box, .hasil {
     margin-top: 20px;
     padding: 15px;
-    background: #eef;
-    border-radius: 6px;
+    background: #eef2ff;   /* ganti warna */
+    border-radius: 10px;   /* biar lebih lembut */
+    font-size: 16px;
+    line-height: 1.6;
 }
-
 /* ============================
    TOMBOL KHUSUS PER HALAMAN
 ============================ */
@@ -176,7 +177,7 @@ button,
 /* Tombol Belanja khusus index3 (warna hijau) */
 .btn-bmi-menu {
     background: #28a745 !important;
-    color: white !important;
+    color: black !important;
     border: none;
     padding: 12px;
     border-radius: 6px;

@@ -36,12 +36,14 @@ if (btnHitungBelanja) {
         let aplikasi = 2000;
         let total = subtotal - potDiskon + layanan + ongkir + aplikasi;
         
-        outSubtotal.textContent = formatRupiah(subtotal);
-        outDiskon.textContent = formatRupiah(potDiskon);
-        outLayanan.textContent = formatRupiah(layanan);
-        outOngkir.textContent = formatRupiah(ongkir);
-        outAplikasi.textContent = formatRupiah(aplikasi);
-        outTotal.textContent = formatRupiah(total);
+        document.getElementById("hasilBelanja").innerHTML = `
+    <b>Subtotal:</b> ${formatRupiah(subtotal)} <br>
+    <b>Diskon:</b> ${formatRupiah(potDiskon)} <br>
+    <b>Biaya Layanan (2%):</b> ${formatRupiah(layanan)} <br>
+    <b>Ongkir:</b> ${formatRupiah(ongkir)} <br>
+    <b>Biaya Aplikasi:</b> ${formatRupiah(aplikasi)} <br><br>
+    <b>Total Bayar: ${formatRupiah(total)}</b>
+`;
     };
 }
 
@@ -51,12 +53,8 @@ if (btnResetBelanja) {
         jumlah.value = "";
         diskon.value = "";
         
-        outSubtotal.textContent = "Rp 0";
-        outDiskon.textContent = "Rp 0";
-        outLayanan.textContent = "Rp 0";
-        outOngkir.textContent = "Rp 0";
-        outAplikasi.textContent = "Rp 0";
-        outTotal.textContent = "Rp 0";
+        document.getElementById("hasilBelanja").innerHTML =
+    "Hasil perhitungan akan muncul di sini...";
     };
 }
 
