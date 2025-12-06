@@ -49,7 +49,7 @@ if (btnHitungBelanja) {
 
 if (btnResetBelanja) {
     btnResetBelanja.onclick = function() {
-        harga.value = "";
+        harga.value = "150000";
         jumlah.value = "";
         diskon.value = "";
         
